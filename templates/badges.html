@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MoodyCode | Duane M. Moody</title>
+</head>
+<body>
+    {% for i in data.badges %}
+        <img src="{{ i.icon_url }}" alt="{{ i.name }}" width="50">
+    {% endfor %}
+
+    <ul>
+    {% for key,i in course_dict.items %}
+        <li>{{ key }}
+            <ul>
+                {% for x in i %}
+                <li>{{ x }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
