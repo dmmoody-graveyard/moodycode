@@ -13,6 +13,9 @@ def about(request):
     github = urllib2.urlopen('https://api.github.com/users/dmmoody/repos')
     github_data = json.load(github)
 
+    codeschool = urllib2.urlopen('https://www.codeschool.com/users/dmmoody.json')
+    codeschool_data = json.load(codeschool)
+
     treehouse = urllib2.urlopen('http://teamtreehouse.com/duanemoody.json')
     treehouse_data = json.load(treehouse)
     badge_count = 0
@@ -33,4 +36,5 @@ def about(request):
                                              'points': points,
                                              'badge_count': badge_count,
                                              'activity_date': activity_date,
-                                             'github_data': github_data})
+                                             'github_data': github_data,
+                                             'codeschool_data': codeschool_data})

@@ -71,7 +71,7 @@
         </div>
     </section>
 
-    <section id="about" class="container content-section">
+    <section id="github" class="container content-section">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h1>GitHub Activity</h1>
@@ -83,7 +83,7 @@
         </div>
     </section>
 
-    <section id="projects" class="content-section">
+    <section id="treehouse" class="content-section">
         <div class="row">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -100,6 +100,21 @@
                                             {% endfor %}
                                         </ul></h3>
                                     </li>
+                                {% endfor %}
+                            </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="codeschool" class="content-section">
+        <div class="row">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1>Code School Courses</h1>
+                            <ul class="list-unstyled">
+                                {% for i in codeschool_data.courses.completed %}
+                                    <li><h3><img src="{{ i.badge }}" width="20"> <small>{{ i.title }}</small></h3></li>
                                 {% endfor %}
                             </ul>
                 </div>
