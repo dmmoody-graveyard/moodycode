@@ -71,10 +71,13 @@
         </div>
     </section>
 
-    <section id="about" class="container content-section text-center">
+    <section id="about" class="container content-section">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-
+                <h1>GitHub Activity</h1>
+                {% for repos in github_data %}
+                    <h3>{{ repos.name }} <small>{{ repos.language }}</small></h3>
+                {% endfor %}
 
             </div>
         </div>

@@ -10,13 +10,16 @@ def home(request):
 
 
 def about(request):
-    response = urllib2.urlopen('http://teamtreehouse.com/duanemoody.json')
-    data = json.load(response)
+    github = urllib2.urlopen('https://api.github.com/users/dmmoody/repos')
+    github_data = json.load(github)
+
+    treehouse = urllib2.urlopen('http://teamtreehouse.com/duanemoody.json')
+    treehouse_data = json.load(treehouse)
     badge_count = 0
-    points = data['points']['total']
+    points = treehouse_data['points']['total']
     course_dict = {}
     activity_date = []
-    for i in data['badges']:
+    for i in treehouse_data['badges']:
         badge_count += 1
         activity_date.append(i['earned_date'])
         if i['courses']:
@@ -25,8 +28,9 @@ def about(request):
             else:
                 course_dict[i['courses'][0]['title']] = [[i['courses'][1]['title'], i['icon_url']]]
     activity_date = json.dumps(activity_date)
-    return render_to_response('about.html', {'data': data,
+    return render_to_response('about.html', {'treehouse_data': treehouse_data,
                                              'course_dict': course_dict,
                                              'points': points,
                                              'badge_count': badge_count,
-                                             'activity_date': activity_date})
+                                             'activity_date': activity_date,
+                                             'github_data': github_data})
