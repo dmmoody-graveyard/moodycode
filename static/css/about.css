@@ -29,6 +29,16 @@ p {
     line-height: 1.5;
 }
 
+.github {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.github_small {
+    color: #999;
+}
+
 @media(min-width:767px) {
     p {
         margin: 0 0 35px;
