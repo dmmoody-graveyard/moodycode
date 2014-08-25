@@ -19,7 +19,7 @@
 
     <!-- Custom Theme CSS -->
     {% load staticfiles %}
-    <link href="{% static "css/whitescale.css" %}" rel="stylesheet">
+    <link href="{% static "css/about.css" %}" rel="stylesheet">
 
 </head>
 
@@ -112,11 +112,11 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h1>Code School Courses</h1>
-                            <ul class="list-unstyled">
-                                {% for i in codeschool_data.courses.completed %}
-                                    <li><h3><img src="{{ i.badge }}" width="20"> <small>{{ i.title }}</small></h3></li>
-                                {% endfor %}
-                            </ul>
+                        <ul class="list-unstyled">
+                            {% for i in codeschool_data.courses.completed %}
+                                <li><h3><img src="{{ i.badge }}" width="20"> <small>{{ i.title }}</small></h3></li>
+                            {% endfor %}
+                        </ul>
                 </div>
             </div>
         </div>
