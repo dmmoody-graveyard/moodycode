@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8">
@@ -24,7 +24,6 @@
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -44,7 +43,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        <a href="/about" class="active">About</a>
                     </li>
                     <li class="page-scroll">
                         <a href="/projects">Projects</a>
@@ -62,66 +61,72 @@
     <section class="intro">
         <div class="intro-body">
             <div class="container">
-                <div class="row">
-                    <div class=" col-md-8 col-md-offset-2">
-                        <p>I work with business executives, new or frustrated leaders/managers, and small business owners to help them understand how Information Technologies fit into their strategic goals. I assist companies in implementing new technologies that fit within their strategic plan, develop software solutions to meet the demand of the business or organization, and assist small business owners in working with contracted software developers and vendors.</p>
+                <div class="row intro-background ">
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>"Frequently described as a proactive, motivated and innovative leader with a strong background in business, information technology, communications, research and analytics, Duane Moody is regarded as a strong, passionate, effective leader across functions and regions. Duane leverages inclusive and collaborative partnerships to deliver sustained business and organizational growth. He challenges himself and status quo to push boundaries and to consistently raise the bar. Duane’s strengths are in change management, operating with discipline, leveraging technologies, and accountability behind agreed-to measures. Duane is an inspiring communicator with exceptional presentation skills and the ability to help others understand deeply technical topics and how they will help drive significant innovation in the future."<br> - Jeff Tochihara, 2010</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="container">
 
-    <section id="github" class="container content-section">
+    <section id="github" class="content-section col-sm-4 col-sm-offset-8">
+        <h1>GitHub Activity</h1>
+            <ul class="list-unstyled">
+            {% for repos in github_data %}
+                <li><h3>{{ repos.name }} <small>{{ repos.language }}</small></h3></li>
+            {% endfor %}
+            </ul>
+    </section>
+
+    <section id="treehouse" class="content-section col-sm-4 col-sm-offset-8">
+        <h1>Treehouse Learning<br>
+        <small>I have passed {{ badge_count }} lessons and earned {{ points }} points at Treehouse!</small></h1>
+            <ul class="list-unstyled">
+                {% for course, class_list in course_dict.items %}
+                    <li><h3>{{ course }}
+                        <ul class="list-unstyled">
+                            {% for class in class_list %}
+                            <li>
+                                <img src="{{ class.1 }}" width="20">
+                                <small>{{ class.0 }}</small></li>
+                            {% endfor %}
+                        </ul></h3>
+                    </li>
+                {% endfor %}
+            </ul>
+    </section>
+
+    <section id="codeschool" class="content-section col-sm-4 col-sm-offset-8"">
+        <h1>Code School Courses</h1>
+            <ul class="list-unstyled">
+                {% for i in codeschool_data.courses.completed %}
+                    <li><h3><img src="{{ i.badge }}" width="20"> <small>{{ i.title }}</small></h3></li>
+                {% endfor %}
+            </ul>
+    </section>
+
+    <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h1>GitHub Activity</h1>
-                {% for repos in github_data %}
-                    <h3>{{ repos.name }} <small>{{ repos.language }}</small></h3>
-                {% endfor %}
-
+                <h2>Contact Duane M. Moody</h2>
+                <p>Feel free to email me to discuss how I may help you, provide me suggestions for new projects, ask me to collaborate on a project with you, or to just say hello!</p>
+                <p>dmmoody@gmail.com</p>
+                <ul class="list-inline banner-social-buttons">
+                    <li><a href="https://twitter.com/duanemmoody" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li><a href="https://github.com/dmmoody" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li><a href="https://plus.google.com/+DuaneMoody" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                    <li><a href="https://linkedin.com/in/dmmoody" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
-
-    <section id="treehouse" class="content-section">
-        <div class="row">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h1>Accomplishments<br>
-                        <small>I have passed {{ badge_count }} lessons and earned {{ points }} points at Treehouse!</small></h1>
-                            <ul class="list-unstyled">
-                                {% for course, class_list in course_dict.items %}
-                                    <li><h3>{{ course }}
-                                        <ul class="list-unstyled">
-                                            {% for class in class_list %}
-                                            <li>
-                                                <img src="{{ class.1 }}" width="20">
-                                                <small>{{ class.0 }}</small></li>
-                                            {% endfor %}
-                                        </ul></h3>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="codeschool" class="content-section">
-        <div class="row">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h1>Code School Courses</h1>
-                        <ul class="list-unstyled">
-                            {% for i in codeschool_data.courses.completed %}
-                                <li><h3><img src="{{ i.badge }}" width="20"> <small>{{ i.title }}</small></h3></li>
-                            {% endfor %}
-                        </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    </div>
     <!-- Core JavaScript Files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>

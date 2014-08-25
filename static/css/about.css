@@ -152,6 +152,11 @@ a:focus {
     font-size: 18px;
 }
 
+.intro-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 25px;
+}
+
 @media(min-width:767px) {
     .intro {
         height: 100%;
