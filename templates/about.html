@@ -9,18 +9,6 @@
 
     <title>MoodyCo.de</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Fonts -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-    <!-- Custom Theme CSS -->
-    {% load staticfiles %}
-    <link href="{% static "css/about.css" %}" rel="stylesheet">
-
     <!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,6 +20,18 @@
         ga('send', 'pageview');
 
     </script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom Theme CSS -->
+    {% load staticfiles %}
+    <link href="{% static "css/about.css" %}" rel="stylesheet">
 
 </head>
 
@@ -82,44 +82,80 @@
         </div>
     </section>
 
-    <div class="container content-section">
-
-        <section id="github" class="col-sm-4 col-sm-offset-8">
-            <h3>GitHub Repos</h3>
-                <ul class="list-unstyled">
-                {% for repos in github_data %}
-                    <li class="github">{{ repos.name }} <small class="github_small">{{ repos.language }}</small></li>
-                {% endfor %}
-                </ul>
+    <section class="container content-section">
+        <div class="col-md-7">
+        <section id="my-journey">
+            <h1 class="text-center">My Journey into Tech</h1>
+            <p>I have always had a passion for computers, software and gadgets.  Technology fascinates me.  In the early 80's, one of my favorite classes was computer lab where we learned simple programs on IBM PC's and Apple II computers.  I had wished those classes would never end as they were my only chance to work with a computer.</p>
+            <p>For years, my only exposure to computers outside of those classes were early word processors; you know the ones.  The ones that replaced the typewriter.  I played with the one my mother had bought.  I learned that I can hack it and run small simple computer games that I programmed.</p>
+            <p>My family was slow to adopt technology.  We did not even have a television until my Junior year of High School.  This was still in the age were computers still did not have a large presence in schools.  It was years after High School that I finally purchased my first computer.  That year was 1999!  I wanted to learn all I could about computers and the software that drives them, but by then my life was in full swing.  The desire, I had plenty; the time, I did not.</p>
+            <p>It was not until 2005 that I finally had an opportunity to sit and actually learn a computer language.  I began learning PHP, database management, HTML and CSS.  At that time, I was well established in my career and figured technology would only be a pleasurable past-time.  I never suspected that I would pursue a career in software or web development.</p>
+            <p>In 2010, I had come to the realization that I needed a career change.  You know, the career that you are absolutely passionate for?  My passion remained with technology and the software that drives it.  After having spent many years in college and a many large student loans to prove it, I decided returning to college was not an option.  I will learn the self-taught way!</p>
+            <p>Over the last three and a half years, I have dug in and spent much of my free time learning.  I started with Python, then moved to Ruby, picked up some Java and JavaScript, along with many other.  My desire to transition into the tech has only grown stronger.</p>
+            <p>My passion and drive is paying off.  I have had the opportunity to provide some work for my current employer, I have completed some freelance work, and I have a few personal projects that i am working on.</p>
         </section>
+        <hr>
+        <br>
+        <section id="passions">
+            <h1 class="text-center">My Passions</h1>
+            <h2>Learning</h2>
+            <p>I have a great desire to learn and seek continuous improve by gaining knowledge and skills. Oftentimes, the process of learning is more thrilling than the outcome; I liken it to being a detective. I enjoy sorting through to uncover facts and sorting through lots of information to find key pieces of evidence.</p>
+            <p>I am drawn to people who value education.  I am eager to hear about others personal ambitions, intentions, goals and how they intend to achieve those. I enjoy participating in other people’s journey or including them in mine.</p>
+            <p>Learning provides me the opportunity to deepen my understanding of various topics, opportunities, problems, solutions, situations, events or people.  My passion for learning helps equip me for my other passion, solving problems and complex challenges.</p>
 
-        <section id="treehouse" class="col-sm-4 col-sm-offset-8">
-            <h3>Treehouse Learning<br>
-            <small>I have passed {{ badge_count }} lessons and earned {{ points }} points at Treehouse!</small></h3>
-                <ul class="list-unstyled">
-                    {% for course, class_list in course_dict.items %}
-                        <li><h5>{{ course }}
-                            <ul class="list-unstyled">
-                                {% for class in class_list %}
-                                <li>
-                                    <img src="{{ class.1 }}" width="10">
-                                    <small>{{ class.0 }}</small></li>
-                                {% endfor %}
-                            </ul></h5>
-                        </li>
+            <h2>My Great Danes</h2>
+            <p>I have two Great Danes that are a joy to spend time with. My male Harlequin, Tango, weighs in at 155 pounds and my female Mantle, Bay, weighs 125 pounds.  We frequent the area dog parks and attend Great Dane Club meet-ups as often as we can.  Our most favorite past-times are exploring the great outdoors in the nearby forests, swimming in the Multnomah river and going to the beach.</p>
+            <p>This past spring, my female had a litter of 12 puppies.  Oh my, was that an experience and one I will not repeat!  I found wonderful homes for each puppy and I enjoy the frequent updates from the new owners.  On occasion, I even have the opportunity to see the puppies at various Great Dane club events which is a pleasure.</p>
+
+            <h2>Motorcycling and Road Trips</h2>
+            <p>Nothing beats heading out on the road for a long motorcycle ride.  Currently I have a 2003 Kawasaki Vulcan 1600 Classic, that I often refer to as my "Cadillac on two wheels".  A day long trip out of town can cure most any ailment.</p>
+            <p>Riding a motorcycle strips away all distractions that life throws at you.  It is an opportunity to enjoy the open road and provides a quite time to think, reflect and recharge.  The most pleasurable rides are the ones that take you down long winding backroads.  There is always a secret gem found on these roads, whether it is a new destination or the much needed clarity of mine - usually both!</p>
+            <p>This is one activity that I wish I could do more of.</p>
+        </section>
+        </div>
+        <div class="col-md-4 col-md-push-1">
+            <section id="Activity">
+                <h1 class="text-center">My Activity</h1>
+            </section>
+
+            <section id="github">
+                <h3>GitHub Repos</h3>
+                    <ul class="list-unstyled">
+                    {% for repos in github_data %}
+                        <li class="github">{{ repos.name }} <small class="github_small">{{ repos.language }}</small></li>
                     {% endfor %}
-                </ul>
-        </section>
+                    </ul>
+            </section>
 
-        <section id="codeschool" class="col-sm-4 col-sm-offset-8">
-            <h3>Code School Courses</h3>
-                <ul class="list-unstyled">
-                    {% for i in codeschool_data.courses.completed %}
-                        <li><h5>{{ i.title }}</h5></li>
-                    {% endfor %}
-                </ul>
-        </section>
+            <section id="treehouse">
+                <h3>Treehouse Learning<br>
+                <small>I have passed {{ badge_count }} lessons and earned {{ points }} points at Treehouse!</small></h3>
+                    <ul class="list-unstyled">
+                        {% for course, class_list in course_dict.items %}
+                            <li><h5>{{ course }}
+                                <ul class="list-unstyled">
+                                    {% for class in class_list %}
+                                    <li>
+                                        <img src="{{ class.1 }}" width="10">
+                                        <small>{{ class.0 }}</small></li>
+                                    {% endfor %}
+                                </ul></h5>
+                            </li>
+                        {% endfor %}
+                    </ul>
+            </section>
 
+            <section id="codeschool">
+                <h3>Code School Courses</h3>
+                    <ul class="list-unstyled">
+                        {% for i in codeschool_data.courses.completed %}
+                            <li><h5>{{ i.title }}</h5></li>
+                        {% endfor %}
+                    </ul>
+            </section>
+    </section>
+    </div>
+    <div>
         <section id="contact" class="container content-section text-center">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
