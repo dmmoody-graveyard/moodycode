@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MoodyCo.de | Duane M. Moody</title>
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-45529500-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom Theme CSS -->
+    {% load staticfiles %}
+    <link href="{% static "css/about.css" %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <span class="light">Duane M. Moody</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/about" class="active">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/projects">Projects</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row intro-background ">
+                    <div class="col-md-8 col-md-offset-2">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container content-section">
+        <section id="Activity">
+            <h1 class="text-center">Websites</h1>
+        </section>
+        <div class="container">
+            <section class="col-lg-8">
+                <h2>PortlandGreatDanes.com</h2>
+                <p>This project was to showcase my Great Danes and a recent litter of 12 puppies that I had during Spring 2014.</p>
+                <h3>
+                    Languages Used<small>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul></small>
+                </h3>
+            </section>
+            <section class="col-lg-4">
+                <img src="{% static "img/portlandgreatdanes.jpg" %}" alt="Portland Great Danes Website">
+            </section>
+
+        </div>
+
+        <div class="container">
+            <section class="col-lg-8">
+                <h2>Tucker-Sales.com</h2>
+                <p>This project was a client website that I had picked up.  The client wanted a simple brochure style website.</p>
+                <h3>
+                    Languages Used<small>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul></small>
+                </h3>
+            </section>
+            <section class="col-lg-4">
+                <img src="{% static "img/tuckersales.jpg" %}" alt="Portland Great Danes Website">
+            </section>
+
+        </div>
+
+        <div class="container content-section">
+            <section id="Activity">
+                <h1 class="text-center">GitHub Repositories and Activity</h1>
+            </section>
+
+            <section id="github">
+                    <ul class="list-unstyled">
+                    {% for repos in github_data %}
+                        <li class=""><h3>{{ repos.name }} <small class="">{{ repos.language }}</small></h3>
+                            <ul class="list-unstyled">
+                                <li><p>{{ repos.description }}</p></li>
+                            </ul>
+                        </li><hr>
+                    {% endfor %}
+                    </ul>
+            </section>
+
+
+    </section>
+    </div>
+    <div>
+        <section id="contact" class="container content-section text-center">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Contact Duane M. Moody</h2>
+                    <p>Feel free to email me to discuss how I may help you, provide me suggestions for new projects, ask me to collaborate on a project with you, or to just say hello!</p>
+                    <p>dmmoody@gmail.com</p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li><a href="https://twitter.com/duanemmoody" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li><a href="https://github.com/dmmoody" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li><a href="https://plus.google.com/+DuaneMoody" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                        </li>
+                        <li><a href="https://linkedin.com/in/dmmoody" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Core JavaScript Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static "js/about-page.js" %}"></script>
+
+</body>
+
+</html>

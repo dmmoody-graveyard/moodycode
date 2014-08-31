@@ -10,9 +10,6 @@ def home(request):
 
 
 def about(request):
-    github = urllib2.urlopen('https://api.github.com/users/dmmoody/repos')
-    github_data = json.load(github)
-
     codeschool = urllib2.urlopen('https://www.codeschool.com/users/dmmoody.json')
     codeschool_data = json.load(codeschool)
 
@@ -36,5 +33,9 @@ def about(request):
                                              'points': points,
                                              'badge_count': badge_count,
                                              'activity_date': activity_date,
-                                             'github_data': github_data,
                                              'codeschool_data': codeschool_data})
+
+def projects(request):
+    github = urllib2.urlopen('https://api.github.com/users/dmmoody/repos')
+    github_data = json.load(github)
+    return render_to_response('projects.html', {'github_data': github_data})
